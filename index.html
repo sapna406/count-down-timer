@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Countdown Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- Floating balloons -->
+    <div class="balloons">
+      <div class="balloon" style="--clr:#ff6b6b; --delay:0s; --left:8%">🎈</div>
+      <div class="balloon" style="--clr:#ffd93d; --delay:1.2s; --left:20%">🎈</div>
+      <div class="balloon" style="--clr:#6bcb77; --delay:2.5s; --left:78%">🎈</div>
+      <div class="balloon" style="--clr:#4d96ff; --delay:0.7s; --left:90%">🎈</div>
+      <div class="balloon" style="--clr:#ff6bdf; --delay:3.1s; --left:50%">🎈</div>
+    </div>
+
+    <!-- Confetti particles -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div id="parent">
+
+      <!-- Header -->
+      <div class="header">
+        <p class="label">C O U N T D O W N  T O</p>
+        <h1>🎂 Happy Birthday!</h1>
+        <p id="event-name" class="event-name">Someone Special's Big Day</p>
+      </div>
+
+      <!-- Date Picker -->
+      <div class="date-picker-wrap">
+        <label for="birthdayInput">Set Birthday Date</label>
+        <input type="date" id="birthdayInput" />
+        <button type="submit" id="setBtn">Set 🎯</button>
+      </div>
+
+      <!-- Countdown Cards -->
+      <div id="result" class="countdown-grid">
+        <div class="card" id="card-days">
+          <span class="num" id="days">--</span>
+          <span class="unit">Days</span>
+        </div>
+        <div class="sep">:</div>
+        <div class="card" id="card-hours">
+          <span class="num" id="hours">--</span>
+          <span class="unit">Hours</span>
+        </div>
+        <div class="sep">:</div>
+        <div class="card" id="card-mins">
+          <span class="num" id="mins">--</span>
+          <span class="unit">Minutes</span>
+        </div>
+        <div class="sep">:</div>
+        <div class="card" id="card-secs">
+          <span class="num" id="secs">--</span>
+          <span class="unit">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Birthday message shown on the day -->
+      <div id="birthday-msg" class="birthday-msg hidden">
+        🎉 It's the Big Day! Happy Birthday! 🎂
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Progress to birthday</span>
+          <span id="progress-pct">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
